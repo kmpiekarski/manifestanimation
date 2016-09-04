@@ -20,7 +20,6 @@ global $pagenow,
 	$is_apache, $is_IIS, $is_iis7, $is_nginx;
 
 // On which page are we ?
-include_once('client.php');
 if ( is_admin() ) {
 	// wp-admin pages are checked more carefully
 	if ( is_network_admin() )
@@ -60,7 +59,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 		if ( stripos( $_SERVER['HTTP_USER_AGENT'], 'chromeframe' ) !== false ) {
 			$is_admin = is_admin();
 			/**
-			 * Filter whether Google Chrome Frame should be used, if available.
+			 * Filters whether Google Chrome Frame should be used, if available.
 			 *
 			 * @since 3.2.0
 			 *
